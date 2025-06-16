@@ -12,8 +12,7 @@ class Advisor:
     async def advise(self, model, crisis_text, policy_options,
     state_dict, thread, policy_base_effects_list):
         prompt = (
-            f"You are {self.name}, and your official role is to guide the ruler of the kingdom - your title is 
-            {self.persona}. Your response to this will go into a public chat channel with all other advisors.\n"
+            f"You are {self.name}, and your official role is to guide the ruler of the kingdom - your title is {self.persona}. Your response to this will go into a public chat channel with all other advisors.\n"
             f"Public goal: maintain prosperity and stability.\n"
             f"SECRET GOAL: {self.goal} - you should keep this information secret from everyone, unless you believe revealing it will further the goal.\n\n"
             f"Crisis: {crisis_text}\n"
