@@ -14,7 +14,6 @@ from core.stats import apply_policy, print_stats, generate_sample_policy_deltas
 
 load_dotenv()
 gen.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-model = gen.GenerativeModel("gemini-2.5-flash-preview-05-20")
 
 class GameState:
     def __init__(self):
@@ -38,10 +37,10 @@ def print_player_commands():
     console = Console()
     console.print(Panel.fit(
         "[bold yellow]Player Commands[/bold yellow]\n\n"
-        "[cyan]ask [advisor name] [message][/cyan]  - Ask a single advisor something\n"
-        "[cyan]all [message][/cyan]               - Broadcast a message to all advisors\n"
-        "[cyan]!choose [alloc_A] [alloc_B] [alloc_C][/cyan] - Lock in policy allocations (e.g., !choose 50 30 20)\n"
-        "[cyan]log[/cyan]                         - Show the conversation history\n"
+        "[cyan]ask [advisor name] [message][/cyan]                        - Ask a single advisor something\n"
+        "[cyan]all [message][/cyan]                        - Broadcast a message to all advisors\n"
+        "[cyan]!choose [alloc_A] [alloc_B] [alloc_C][/cyan]                        - Lock in policy allocations (e.g., !choose 50 30 20)\n"
+        "[cyan]log[/cyan]                        - Show the conversation history\n"
         "[cyan]quit[/cyan]                        - End the game immediately\n\n"
         "[dim italic]Example: !choose 60 20 20 (allocates 60% to A, 20% to B, 20% to C)[/dim italic]",
         title="How to Play",
