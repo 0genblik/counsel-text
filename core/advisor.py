@@ -1,5 +1,5 @@
 import random
-from core.stats import generate_sample_policy_deltas
+# from core.stats import generate_sample_policy_deltas
 
 class Advisor:
     def __init__(self, name, persona, goal):
@@ -37,9 +37,7 @@ class Advisor:
 
         try:
             response = await model.generate_content_async(prompt, generation_config={
-                "temperature": 0.7,
-                "max_output_tokens": 150
-            })
+                "temperature": 0.7})
             return response.text.strip()
         
         except Exception as e:
